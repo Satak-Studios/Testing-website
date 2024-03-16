@@ -21,13 +21,13 @@ function setLink() {
   }
 
   // Modify the link based on the CPU architecture
-  let link;
-  if (userAgent.includes('Android')) {
-    link = `https://www.dropbox.com/s/m8rw2eramse8n8d/BALL_SURFERS.apk?dl=1`;
-  } else if (cpuArchitecture === 'x86') {
-    link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X86).exe';
+  let link = "d/BSS/v2/BSS2.apk";
+  if (cpuArchitecture === 'x86') {
+    //link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X86).exe';
+    link = link;
   } else {
-    link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X64).exe';
+    //link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X64).exe';
+    link = "#";
   }
 
   // Use the link variable to set the href attribute of an <a> element
@@ -36,6 +36,47 @@ function setLink() {
   downloadGame(link);
 }
 
+function setLinkMob() {
+  let link = "d/BSS/v2/BSS2.apk";
+  linkElement.href = link;
+  downloadGame(link);
+}
+
 function downloadGame(_link,){
   window.location.replace(_link)
+}
+
+function myFunction(imgs) {
+  var trailer = document.getElementById("trailer");
+  trailer.style.display = "none";
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.style.display = "block";
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+
+function myVid(vids) {
+  var trailer = document.getElementById("trailer");
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.style.display = "none";
+  trailer.style.display = "block";
+}
+let totalDownload = 0;
+
+function increaseDownload(){
+  totalDownload ++;
+  console.log("Downloads = " + totalDownload);
+  SaveDownloads();
+}
+
+function SaveDownloads(){
+  console.log("This is a Dummy")
+}
+
+function LoadDownload(){
+  document.getElementById("downloadsText") = totalDownload;
 }
