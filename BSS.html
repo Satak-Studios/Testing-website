@@ -97,12 +97,53 @@
     <script src="js/main.js"></script>
     <script src="js/BS.js"></script>
 <script>
-   function isComputer() {
-        var userAgent = navigator.userAgent.toLowerCase();
+  const userAgent = navigator.userAgent;
 
-        return userAgent.includes("windows") || userAgent.includes("macintosh") || userAgent.includes("linux");
+  // Get the number of logical processors
+  const logicalProcessors = navigator.hardwareConcurrency;
+
+  // Determine the CPU architecture based on the user agent string and number of logical processors
+  let cpuArchitecture;
+  if (userAgent.includes('Android')) {
+    if (logicalProcessors <= 2) {
+      cpuArchitecture = 'armeabi-v7a';
+    } else {
+      cpuArchitecture = 'arm64-v8a';
     }
+  } else if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
+    cpuArchitecture = 'x64';
+  } else {
+    cpuArchitecture = 'x86';
+  }
 
+if (cpuArchitecture === 'x86') {
+                window.location.replace("/BSSP");
+            
+            setTimeout(function() {
+                var newURL = "/BSS";
+                var stateObj = { pageTitle: "BSS" };
+                window.history.replaceState(stateObj, "BSS", newURL);
+            }, 1000); 
+  } elseif (cpuArchitecture === 'x64'){
+window.location.replace("/BSSP");
+            
+            setTimeout(function() {
+                var newURL = "/BSS";
+                var stateObj = { pageTitle: "BSS" };
+                window.history.replaceState(stateObj, "BSS", newURL);
+            }, 1000);
+}
+
+  // Use the link variable to set the href attribute of an <a> element
+  const linkElement = document.getElementById('my-link');
+  linkElement.href = link;
+  downloadGame(link);
+  }
+
+  // Use the link variable to set the href attribute of an <a> element
+  const linkElement = document.getElementById('my-link');
+  linkElement.href = link;
+  downloadGame(link);
     function redirectToDifferentPage() {
         if (isComputer()) {
             window.location.replace("/BSSP");
