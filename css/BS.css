@@ -1,57 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
-ul{
-  list-style: none;
+.panel{
+  width: 20%;
+  background-color: rgba(20, 20, 20, 0.271);
+  padding: 30px;
+  border-radius: 22px;
+  margin-top: 7%;
+  margin-right: 10%;
+  margin-left: auto;
+  float: right;
 }
 
-li{
-  font-size: 1.125vw;
-}
-
-.main{
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  row-gap: 8px;
-  column-gap: 16px;
-  padding: 20px;
-}
-
-.column{
-  width: 50%;
-  float: left;
-}
-
-/*.main{
-  margin-top: 50px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  column-gap: 0px;
-
-  align-content: stretch;
-  justify-content: center;
-  align-items: end;
-}*/
-
-
-.game-info{
-  background-color: #04AA6D;
-  padding: 0;
-  margin-top: 25px;
-  max-width: 50%;
-  position: absolute;
-  left: 10%;
-  right: 20%;
-}
-
-.game-logo{
-  width: 100%;
-  height: auto;
-}
-
-.game-trailer{
-  width: 100%;
-  height: auto;
+.title{
+  font-weight: bolder;
+  font-size: xxx-large;
+  text-align: center;
+  padding-bottom: 2%;
 }
 
 .title-m{
@@ -62,9 +26,30 @@ li{
   padding-bottom: 2%;
 }
 
+.game-info{
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 25px;
+  margin-bottom: 5%;
+  max-width: 58%;
+  margin-left: 5%;
+  margin-right: auto;
+}
+
 .main-m{
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.Desc{
+  margin-top: 5%;
+  padding: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  font-size: larger;
+  font-weight: 400;
+  background-color: rgba(20, 20, 20, 0.271);
 }
 
 .Desc-m{
@@ -75,7 +60,14 @@ li{
   margin-right: 2%;
   text-align: center;
   font-size: large;
+  font-family:cursive;
+  color: rgba(240, 248, 255, 0.795);
   background-color: rgba(20, 20, 20, 0.271);
+}
+
+.game-trailer{
+  width: 100%;
+  height: auto;
 }
 
 .game-trailer-m{
@@ -111,17 +103,24 @@ li{
 }
 
 .sys-req{
-  background-color: cadetblue;
-  width: 100%;
-  list-style-type: none;
-  padding: 0;
-  max-width: 50%;
   text-align: center;
-  
-  position: absolute;
-  top: 800px;
-  left: 10%;
-  right: 20%;
+  background-color: rgba(20, 20, 20, 0.271);
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-bottom: 5%;
+}
+
+.sys-child{
+  width: 75%;
+  border: #00b8e6;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: larger;
+  max-height: 25%;
+  padding: 50;
 }
 
 .sys-req-m{
@@ -141,6 +140,32 @@ li{
   margin-left: 3%;
   margin-right: 2%;
   font-size:2.6vw;
+}
+
+.legal{
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.271);
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.legal:link{
+  color: #00b8e6;
+}
+
+.others{
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.271);
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.holder-items{
+  width: 20%;
 }
 
 .legal-m{
@@ -200,10 +225,6 @@ li{
   }
    .button4 {border-radius: 12px;}
 
-   @media screen and (max-width: 550px) {
-    
-  }
-
   /*GALLERY*/
   .column {
     float: left;
@@ -231,6 +252,11 @@ li{
   
   /* The expanding image container (positioning is needed to position the close button and the text) */
   .cont {
+    position: relative;
+    display: none;
+  }
+
+  .cont-m {
     position: relative;
     display: none;
   }

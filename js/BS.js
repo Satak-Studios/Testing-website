@@ -1,36 +1,14 @@
 
 function setLink() {
-  // Get the user agent string
   const userAgent = navigator.userAgent;
 
-  // Get the number of logical processors
-  const logicalProcessors = navigator.hardwareConcurrency;
-
-  // Determine the CPU architecture based on the user agent string and number of logical processors
-  let cpuArchitecture;
-  if (userAgent.includes('Android')) {
-    if (logicalProcessors <= 2) {
-      cpuArchitecture = 'armeabi-v7a';
-    } else {
-      cpuArchitecture = 'arm64-v8a';
-    }
-  } else if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
-    cpuArchitecture = 'x64';
+  let link = "d/BSS/PC/BSS2.exe";
+if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
+    link = 'd/BSS/PC/BSS2.exe';
   } else {
-    cpuArchitecture = 'x86';
+    link = 'd/BSS/PC/BSS2(x86).exe';;
   }
 
-  // Modify the link based on the CPU architecture
-  let link = "d/BSS/v2/BSS2.apk";
-  if (cpuArchitecture === 'x86') {
-    //link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X86).exe';
-    link = link;
-  } else {
-    //link = 'https://archive.satak.gq/d/BS/c/BALL SURFERS (X64).exe';
-    link = "#";
-  }
-
-  // Use the link variable to set the href attribute of an <a> element
   const linkElement = document.getElementById('my-link');
   linkElement.href = link;
   downloadGame(link);
@@ -38,6 +16,8 @@ function setLink() {
 
 function setLinkMob() {
   let link = "d/BSS/v2/BSS2.apk";
+  const linkElement = document.getElementById('my-link');
+  
   linkElement.href = link;
   downloadGame(link);
 }

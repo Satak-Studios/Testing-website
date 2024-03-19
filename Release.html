@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Adding CSS/Stylesheet -->
+		<style>
+			p {
+				text-align: center;
+				font-size: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="counter">
+            <div>
+                <p id="day">00</p>
+                <span>Days</span>
+            </div>
+            <div>
+                <p id="hr">00</p>
+                <span>Hours</span>
+            </div>
+            <div>
+                <p id="min">00</p>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <p id="sec">00</p>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+            .counter{
+                display: flex;
+                font-family: Poppins;
+                font-weight: 500;
+            }
+
+            .counter div{
+                flex-basis: 100px;
+                text-align: center;
+                padding: 0%;
+            }
+
+            .counter div p{
+                font-size: 60px;
+                margin-bottom: -14px;
+                font-family: Poppins;
+                font-weight: 800
+            }
+        </style>
+
+		<script>
+			// Converting string to required date format 
+			let deadline = new Date("April 30, 2024 8:30:00")
+							.getTime();
+
+			// To call defined fuction every second
+			let x = setInterval(function () {
+				
+				let now = new Date().getTime();
+
+				let t = deadline - now;
+
+				let days = Math.floor(t / (1000 * 60 * 60 * 24));
+				let hours = Math.floor(
+					(t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				let minutes = Math.floor(
+					(t % (1000 * 60 * 60)) / (1000 * 60));
+				let seconds = Math.floor(
+					(t % (1000 * 60)) / 1000);
+
+				document.getElementById("day").innerHTML = days;
+                document.getElementById("hr").innerHTML = hours;
+                document.getElementById("min").innerHTML = minutes;
+                document.getElementById("sec").innerHTML = seconds;
+
+				if (t < 0) {
+					clearInterval(x);
+					document.getElementById("counter")
+							.innerHTML = "EXPIRED";
+				}
+			}, 1000);
+		</script>
+	</body>
+</html>
