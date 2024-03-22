@@ -110,6 +110,7 @@
   margin-left: 2%;
   margin-right: 2%;
   padding-bottom: 5%;
+  border-radius: 12px;
 }
 
 .sys-child{
@@ -142,15 +143,27 @@
 }
 
 .legal{
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   background-color: rgba(20, 20, 20, 0.271);
   margin-top: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
 }
 
-.legal:link{
-  color: #00b8e6;
+.legal-item{
+  margin: 1%;
+  border-radius: 1%;
+  margin-bottom: 0%;
+  padding-bottom: auto;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+}
+
+.legal-item:hover{
+  background-color: rgba(0, 0, 0, 0.271);
+  opacity: 2;
+  color: cornflowerblue;
 }
 
 .others{
@@ -161,6 +174,7 @@
   padding-bottom: 5%;
   margin-left: 2%;
   margin-right: 2%;
+  border-radius: 12px;
 }
 
 .holder-items{
@@ -168,13 +182,16 @@
 }
 
 .legal-m{
-  text-align: center;
+  display: flex;
+  justify-content:space-evenly;
+  text-align:center;
   background-color: rgba(20, 20, 20, 0.271);
   margin-top: 5%;
-  padding-top: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
-  padding-bottom: 2%;
+}
+
+.legal-item-m{
+  margin: 1%;
+  font-size: medium;
 }
 
 .legal-m:link{
@@ -195,10 +212,74 @@
   width: 40%;
 }
 
+.downloads-main{
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.271);
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 12px;
+}
+
+.downloads{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-item{
+  font-weight: 800;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 12px;
+  text-align: center;
+  width: 15%;
+  padding: 2%;
+  margin: 2% auto;
+}
+
+.downloads-main-m{
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.271);
+  margin-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 12px;
+}
+
+.downloads-m{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.download-item-m{
+  font-weight: 800;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 12px;
+  text-align: center;
+  width: max-content;
+  height: max-content;
+  padding: 2%;
+  margin: 2% auto;
+}
+
+.countDown{
+  display: none;
+  background-color: black;
+  width: 90%;
+  height: 90%;
+}
+
    .button {
      background-color: #04AA6D;
      border: none;
-     color: rgb(0, 140, 255);
+     color: rgb(123, 148, 168)7;
      padding: 20px;
      text-align: center;
      text-decoration: none;

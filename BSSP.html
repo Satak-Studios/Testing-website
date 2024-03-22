@@ -54,9 +54,9 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="Home" class="nav-link">Home</a></li>       
                 <li class="has-children">
-                  <a href="#" class="nav-link">GAMES</a>
+                  <a href="Games" class="nav-link">GAMES</a>
                   <ul class="dropdown">
-                    <li><a href="BS">BALL SURFERS</a></li>
+                    <li><a href="BSS">BALL SURFERS</a></li>
                   </ul>
                 </li>
                 <li><a href="Games" class="nav-link">NEWS</a></li>
@@ -96,13 +96,25 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
     <script src="js/BS.js"></script>
-<body>
+    <script>
+      function yo(){
+        //window.history.replaceState({}, "BSS.html", "BSS.html");
+      }
+
+      function closeIt()
+      {
+        window.location.replace("/BSSP");
+      }
+      window.onbeforeunload = closeIt;
+    </script>
+
+<body onload="yo()">
 
   <div class="panel">
     
     <img width="100%" height="100%" src="img/BS ANDROID.png" alt="BALL SURFERS Logo">
-    <a href="BSSPD.html">
-      <button class="button3">
+    <a href="#">
+      <button onclick="saveData()" class="button3">
         DOWNLOAD
       </button>
     </a>
@@ -130,22 +142,33 @@
     </div>
   </div>
   </div>
-    <p class="Desc" id="c">BALL SURFERS is an cross-platform multiplayer and singleplayer game in which you have to avoid obsticle by moving left or right and you can also compare your highscore with other players. In multiplayer you have an different gamemodes with customizable gameplay</p>
-<!--
-  <div class="changes">
-    <h3 style="margin-bottom: 1%; margin-top: 1%; font-size: xx-large; font-weight: bold;">New Features of v2</h3>
-    <ul>
-      <li>New GameModes in Multiplayer</li>
-      <li>New Achievements</li>
-      <li>New Offline GameModes</li>
-      
-      <li>New Character Customization options</li>
-      <li>New SaveData System</li>
-      <li>Reworked Chat-System</li>
-      <li>Better User-Interface</li>
-      <li>Fixed bugs and glitches</li>
-    </ul>
-  </div>-->
+    <div class="Desc">
+    <p>BALL SURFERS is an cross-platform multiplayer and singleplayer game in which you have to avoid obsticle by moving left or right and you can also compare your highscore with other players. In multiplayer you have different gamemodes with customizable gameplay. The new update includes new gamemodes, new customization options, new achievement system, new save system and update User-Interface</p>
+    </div>
+  <div class="downloads-main">
+    <h2 style="padding-top:2%; margin-top:auto; margin-bottom: 2%; font-weight: 600; text-align: center;">Downloads</h2>
+     <div id="downloads" class="downloads">
+      <div class="download-item">
+        <div id="data-galaxy" style="font-size: 3rem;">0</div>
+        <p>On GalaxyStore</p>
+      </div>
+
+      <div class="download-item">
+        <div id="data-amazon" style="font-size: 3rem;">0</div>
+        <p>On Amazon</p>
+      </div>
+
+      <div class="download-item">
+        <div id="data-itch" style="font-size: 3rem;">0</div>
+        <p>On Itch.io</p>
+      </div>
+
+      <div class="download-item">
+        <div id="data-web" style="font-size: 3rem;">0</div>
+        <p>On this website</p>
+      </div>
+    </div>
+    </div>
    
     <!--SystemRequirements-->
     <div class="sys-req">
@@ -178,6 +201,7 @@
         </tr>
       </table>  
     </div>
+
     <div class="others">
       <h2 style="margin-bottom: 4%;">Also Available At</h2>
       <a href="https://galaxy.store/bss">
@@ -192,21 +216,74 @@
       <!--<p>The End-User License Agreement (EULA) for BALL SURFERS establishes the terms users must agree to before using the application. It grants a limited license for personal, non-commercial use and includes disclaimers of warranties and limitations on liability. Users must indemnify the company for any claims and comply with U.S. legal requirements. The agreement remains in effect until terminated, with the company having the right to make changes. Overall, the EULA outlines the rights and responsibilities of both users and the company.</p>-->
     </div>
 
+    <div class="countDown">
+      <h2>BALL SURFERS in launching on 30April!</h2>
+    </div>
+    
     <footer>
       
       <div class="legal">
-        <a href="Policy/T&C/BS.html">
+        <a class="legal-item" href="Policy/T&C/BS.html">
           <p>Terms & Conditions</p>
         </a>
-        <a href="Policy/Privacy/BS.html">
+        <a class="legal-item" href="Policy/Privacy/BS.html">
           <p>Privacy Policy</p>
         </a>
-        <a href="Policy/EULA/BS.html">
+        <a class="legal-item" href="Policy/EULA/BS.html">
           <p>End-User License Agreement (EULA)</p>
         </a>  
       
-      <p style="text-align: center; font-size:small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
+      <p style="text-align:center; margin-bottom: 0; margin-right: 1%; margin-left: auto; margin-top: auto; font-size:small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
       </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script>     
+      const firebaseConfig = {
+        apiKey: "AIzaSyCOPFGMkjuO7iu1KjA6YNco0PVM2kk72cg",
+        authDomain: "satak-studios-website.firebaseapp.com",
+        databaseURL: "https://satak-studios-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "satak-studios-website",
+        storageBucket: "satak-studios-website.appspot.com",
+        messagingSenderId: "463716022834",
+        appId: "1:463716022834:web:0cd40b89b39230624c5a2b",
+        measurementId: "G-VMSZQ3MNLY"
+      };
+      const app = firebase.initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      var totalDownloads = 8;
+      var tempDowns = 0;
+      function getDownloads() {
+          firebase.database().ref('BSSD').once('value', function(snapshot) {
+              var data = snapshot.val();
+              tempDowns = data.downloads || 0;
+              console.log('dat = ' + tempDowns);
+              changeDownloads(tempDowns);
+              document.getElementById('data-web').innerText = tempDowns;
+          });
+      }
+
+      function saveData() {
+          getDownloads(); // Initiate fetching of downloads
+
+          // Add 1 to the downloaded count
+          var updatedDownloads = tempDowns + 1;
+          console.log(updatedDownloads);
+
+          // Update the database with the new count
+          firebase.database().ref('BSSD').set({
+              downloads: updatedDownloads
+          }).then(function() {
+              console.log('Downloads updated successfully. New count: ' + updatedDownloads);
+          }).catch(function(error) {
+              console.error('Error updating downloads: ', error);
+          });
+      }
+
+  // Call getDownloads to initialize tempDowns
+  getDownloads();
+      document.getElementById('data-web').innerText = getDownloads();
+    </script>
   </body>
 </html>

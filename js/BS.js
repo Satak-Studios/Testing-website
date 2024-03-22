@@ -1,4 +1,3 @@
-
 function setLink() {
   const userAgent = navigator.userAgent;
 
@@ -29,13 +28,10 @@ function downloadGame(_link,){
 function myFunction(imgs) {
   var trailer = document.getElementById("trailer");
   trailer.style.display = "none";
-  // Get the expanded image
   var expandImg = document.getElementById("expandedImg");
   expandImg.style.display = "block";
-  // Use the same src in the expanded image as the image being clicked on from the grid
   expandImg.src = imgs.src;
 
-  // Show the container element (hidden with CSS)
   expandImg.parentElement.style.display = "block";
 }
 
@@ -45,18 +41,52 @@ function myVid(vids) {
   expandImg.style.display = "none";
   trailer.style.display = "block";
 }
-let totalDownload = 0;
 
-function increaseDownload(){
-  totalDownload ++;
-  console.log("Downloads = " + totalDownload);
-  SaveDownloads();
+//IMportant
+var downloads = 8;
+
+function countup(to, element, interval) {
+  let from = 0;
+  let step = to > from ? 1 : -1;
+
+  let counter = setInterval(function(){
+    if ((from + step) * step > to * step) {
+      from = to;
+      element.innerText = from;
+      clearInterval(counter);
+    } else {
+      from += step;
+      element.innerText = from;
+    }
+  }, interval);
 }
 
-function SaveDownloads(){
-  console.log("This is a Dummy")
+function handleScroll() {
+  var element = document.getElementById('downloads');
+  var a = document.getElementById('data-galaxy');
+  var b = document.getElementById('data-amazon');
+  var c = document.getElementById('data-itch');
+  var d = document.getElementById('data-web');
+  var bounding = element.getBoundingClientRect();
+  var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  if (
+    bounding.top >= -bounding.height &&
+    bounding.bottom <= viewportHeight + bounding.height
+  ) {
+    countup(688, a, 8);
+    countup(4, b, 500);
+    countup(76, c, 50);
+    countup(downloads, d, 350);
+    
+    window.removeEventListener('scroll', handleScroll);
+  }
 }
 
-function LoadDownload(){
-  document.getElementById("downloadsText") = totalDownload;
+window.addEventListener('scroll', handleScroll);
+
+function popUp(){
+  var modal = document.getElementById('modal')
+
+  modal.style.display = "block";
 }

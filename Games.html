@@ -5,13 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link rel="icon" type="image/x-icon" href="/img/favicon (2).ico">
+    <link rel="icon" type="image/x-icon" href="/img/favicon (2).png">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!--SEO-->
+    <meta name="description" content="Official Website of Satak Studios">
+    <meta name="keywords" content="Satak, BALL-SURFERS, Satak Studios, Cross-platform, Multiplayer, BS, BSO, BALL SURFERS Download">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -74,15 +78,16 @@
                 </li>
                 
                 
-                <li><a href="Games" class="nav-link">GAMES</a></li>
+                <li class="has-children">
+                  <a href="Games" class="nav-link">GAMES</a>
+                  <ul class="dropdown">
+                    <li><a href="BSS">BALL SURFERS</a></li>
+                  </ul>
+
                 <li><a href="News" class="nav-link">NEWS</a></li>
 
-                <li class="has-children">
-                    <a href="Support" class="nav-link">SUPPORT</a>
-                    <ul class="dropdown">
-                      <li><a href="BS_Support">BALL SURFERS</a></li>
-                    </ul>
-
+                <li>
+                    <a href="Support" class="nav-link">SUPPORT</a></li>
                 <li class="social"><a href="https://www.youtube.com/channel/UCUoG-SpaV_IEc4rzwqjYcYg" class="nav-link"><span class="icon-youtube-play"></span></a></li>
                 <li class="social"><a href="https://twitter.com/SatakStudios" class="nav-link"><span class="icon-twitter"></span></a></li>
                 <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-instagram"></span></a></li>
@@ -115,26 +120,77 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+      function gameLink(name){
+        window.location.replace(name)
+      }
+    </script>
+
     <style>
-        .pcg{
-          position: absolute;
-          right: 40%;
-          top: 88%;
-          left: 43%;
-          bottom: 100%;
+      .title {
+            font-weight: bolder;
+            font-size: 3rem; /* Adjust as needed */
+            text-align: center;
+            margin-top: 2%;
         }
 
-        .bspc{
-            position: absolute;
-          right: 74.5%;
-          top: 162%;
-          left: 38%;
+        .bodi {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2% auto;
+            max-width: 1000px; /* Adjust as needed */
+        }
+
+        .game {
+            background-color: rgba(20, 20, 20, 0.815);
+            width: 35%;
+            padding-top: 2%;
+            padding-bottom: 3.7%;
+            border-radius: 7px;
+            overflow: hidden;
+            margin: 2.5%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .game:hover{
+          color: rgb(106, 106, 221);
+          text-decoration:underline;
+        }
+
+        a:hover{
+          color: solid rgb(106, 106, 221);
+        }
+
+        .game img {
+            width: 80%;
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .game h3 {
+            padding-top: 2%;
+            font-size: 2rem;
+            font-weight: 800;
+            color: aliceblue;
+        }
+
+        @media (max-width: 768px) {
+            .game {
+                width: 80%; 
+                margin: 2% auto;
+            }
         }
     </style>
-     
-    <div class="pcg"><h2>My Games</h2></div>
-    <a href="BS">
-    <div class="bspc"><img src="img/BS PLAYNOW.png" height="25%" width="300px"></div>
-    </a>
+    <div class="title"><h1>Games</h1></body></div>
+    <div class="bodi">
+      <a href="/BSS"><div class="game" onclick="gameLink('/BSS')">
+        <h3>BALL SURFERS</h3>
+        <img src="img/BS ANDROID.png" alt="BALL SURFERS"></a>
+      </div>
+  </div>
 </body>
 </html>
