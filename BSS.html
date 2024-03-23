@@ -65,7 +65,7 @@
 
                 <li class="social"><a href="https://www.youtube.com/channel/UCUoG-SpaV_IEc4rzwqjYcYg" class="nav-link"><span class="icon-youtube-play"></span></a></li>
                 <li class="social"><a href="https://twitter.com/SatakStudios" class="nav-link"><span class="icon-twitter"></span></a></li>
-                <li class="social"><a href="#contact-section" class="nav-link"><span class="icon-"></span></a></li>
+                <li class="social"><a href="#contact-section" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418"/></svg></a></li>
               </ul>
             </nav>
           </div>
@@ -121,106 +121,125 @@
 <body onload="isComputer()">
 
 <div id="mob">
-<div id="main" class="main-m">
-  <h2 class="title-m">BALL SURFERS</h2>
-  <video id="trailer" class="game-trailer-m" src="Trailer/BS.mp4" controls poster="Trailer/BS_Thumbnail.webp" onclick="play()">
-  </video>
-  <!--<iframe id="trailer" style="height: 100%; width : 55%;" class="game-trailer-m" src="https://www.youtube.com/embed/tT91-Uu1v28?si=5DDPuLtbAIXpVFjh" title="BALL SURFERS Trailer" frameborder="0" allowfullscreen></iframe>-->
-  <!-- The expanding image container -->
-  <div class="cont">
-    <img id="expandedImg" style="width:100%">
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img src="Trailer/BS_Thumbnail.webp" alt="ScreenShot" onclick="myVid(this);">
+  <div id="main" class="main-m">
+    <h2 class="title-m">BALL SURFERS</h2>
+    <video id="trailer-m" class="game-trailer-m" src="Trailer/BS.mp4" controls poster="Trailer/BS_Thumbnail.webp" onclick="play()">
+      <button class="icon-play_arrow">sd</button>
+    </video>
+    <div class="cont">
+      <img id="expandedImg-m" style="width:100%">
     </div>
-    <div class="column">
-      <img src="img/BSS/1.png" alt="ScreenShot" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img src="img/BSS/2.jpg" alt="ScreenShot" onclick="myFunction(this);">
-    </div>
-    <div class="column">
-      <img src="img/BSS/4.jpg" alt="ScreenShot" onclick="myFunction(this);">
-    </div>
-  </div>
   
-  
-
-  <a href="BSSMD.html">
-    <button onclick="saveData()" class="button3-m">
-      DOWNLOAD
-    </button>
-  </a>
-</div>
-
-  <p class="Desc-m">BALL SURFERS is an cross-platform multiplayer and singleplayer game in which you have to avoid obsticle by moving left or right and you can also compare your highscore with other players.</p>
-
-  <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
-
-    <!--SystemRequirements-->
-    <div class="sys-req-m">
-      <h4 style="margin-bottom: 2%;">System Requirements</h4>
-      <table border="5" cellspacing="50" cellpadding="10" class="sys-child-m">
-        <tr>
-          <th>Type</th>
-          <th>Minimum</th>
-          <th>Recommended</th>
-        </tr>
-        <tr>
-          <td>OS</td>
-          <td>Android 4.4 (API 19)+</td>
-          <td>Android 13 (API 33) or Higher</td>
-        </tr>
-        <tr>
-          <td>CPU</td>
-          <td>Qualcomm Snapdragon 615</td>
-          <td>Qualcomm Snapdragon 865+</td>
-        </tr>
-        <tr>
-          <td>Graphics API</td>
-          <td>Vulkan</td>
-          <td>OpenGL ES 2.0+</td>
-        </tr>
-        <tr>
-          <td>RAM</td>
-          <td>1GB+ RAM</td>
-          <td>4GB RAM or Higher</td>
-        </tr>
-      </table>  
-    </div>
-    <div class="others-m">
-      <h4 style="margin-bottom: 4%;">Also Available At</h4>
-      <a href="https://galaxy.store/bss">
-        <img class="holder-items-m" style="margin-right: 7%;" src="img/promo/GalaxyStore_English.png" alt="Available on Galaxy Store">
-      </a>
-      <a href="https://www.amazon.in/gp/product/B0B9MHYPMN">
-        <img class="holder-items-m" src="img/promo/amazon-black.png" alt="Available on Amazon App Store">
-      </a>
-      <a href="https://satak-studios.itch.io/ball-surfers">
-        <img class="holder-items-m" style="margin-top: 4%; border-radius: 5%; background-color: rgb(0, 0, 0);" src="img/promo/itch.png" alt="Available on itch.io">
-      </a>
-      <!--<p>The End-User License Agreement (EULA) for BALL SURFERS establishes the terms users must agree to before using the application. It grants a limited license for personal, non-commercial use and includes disclaimers of warranties and limitations on liability. Users must indemnify the company for any claims and comply with U.S. legal requirements. The agreement remains in effect until terminated, with the company having the right to make changes. Overall, the EULA outlines the rights and responsibilities of both users and the company.</p>-->
-    </div>
-
-    <footer>
-      
-      <div class="legal-m">
-        <a href="Policy/T&C/BS.html">
-          <p>Terms & Conditions</p>
-        </a>
-        <a href="Policy/Privacy/BS.html">
-          <p>Privacy Policy</p>
-        </a>
-        <a href="Policy/EULA/BS.html">
-          <p>End-User License Agreement (EULA)</p>
-        </a>  
-      
-      <p style="text-align: center; margin: 0; font-size:x-small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
+    <div class="row">
+      <div class="column">
+        <img src="Trailer/BS_Thumbnail.webp" alt="ScreenShot" onclick="myVid(this);">
       </div>
-    </footer>
+      <div class="column">
+        <img src="img/BSS/1.png" alt="ScreenShot" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/BSS/2.jpg" alt="ScreenShot" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/BSS/4.jpg" alt="ScreenShot" onclick="myFunction(this);">
+      </div>
+    </div>  
+    <a href="BSSMD">
+      <button class="button3-m">
+        DOWNLOAD
+      </button>
+    </a>
+  </div>
+  
+    <p class="Desc-m">BALL SURFERS is an cross-platform multiplayer and singleplayer game in which you have to avoid obsticle by moving left or right and with customizable multiplayer experience.</p>
+  
+    <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+  
+    <div class="downloads-main-m">
+      <h2 style="padding-top:2%; margin-top:auto; margin-bottom: 2%; font-weight: 600; text-align: center;">Downloads</h2>
+       <div id="downloads-m" class="downloads-m">
+        
+  
+        <div class="download-item-m">
+          <div id="data-amazon-m" style="font-size: 1.5rem;">0</div>
+          <p>On Amazon</p>
+        </div>
+  
+        <div class="download-item-m">
+          <div id="data-itch-m" style="font-size: 1.5rem;">0</div>
+          <p style="font-size: medium;">On Itch.io</p>
+        </div>
+  
+        <div class="download-item-m">
+          <div id="data-web-m" style="font-size: 1.5rem;">0</div>
+          <p>On website</p>
+        </div>
+        
+        <div class="download-item-m">
+          <div id="data-galaxy-m" style="font-size: 1.5rem;">0</div>
+          <p>On GalaxyStore</p>
+        </div>
+      </div>
+      </div>
+  
+      <!--SystemRequirements-->
+      <div class="sys-req-m">
+        <h4 style="margin-bottom: 2%;">System Requirements</h4>
+        <table border="5" cellspacing="50" cellpadding="10" class="sys-child-m">
+          <tr>
+            <th>Type</th>
+            <th>Minimum</th>
+            <th>Recommended</th>
+          </tr>
+          <tr>
+            <td>OS</td>
+            <td>Android 4.4 (API 19)+</td>
+            <td>Android 13 (API 33) or Higher</td>
+          </tr>
+          <tr>
+            <td>CPU</td>
+            <td>Qualcomm Snapdragon 615</td>
+            <td>Qualcomm Snapdragon 865+</td>
+          </tr>
+          <tr>
+            <td>Graphics API</td>
+            <td>Vulkan</td>
+            <td>OpenGL ES 2.0+</td>
+          </tr>
+          <tr>
+            <td>RAM</td>
+            <td>1GB+ RAM</td>
+            <td>4GB RAM or Higher</td>
+          </tr>
+        </table>  
+      </div>
+      <div class="others-m">
+        <h4 style="margin-bottom: 4%;">Others Links</h4>
+        <a href="https://galaxy.store/bss">
+          <img class="holder-items-m" style="margin-right: 7%;" src="img/promo/GalaxyStore_English.png" alt="Available on Galaxy Store">
+        </a>
+        <a href="https://www.amazon.in/gp/product/B0B9MHYPMN">
+          <img class="holder-items-m" src="img/promo/amazon-black.png" alt="Available on Amazon App Store">
+        </a>
+        <a href="https://satak-studios.itch.io/ball-surfers">
+          <img class="holder-items-m" style="margin-top: 4%; border-radius: 5%; background-color: rgb(0, 0, 0);" src="img/promo/itch.png" alt="Available on itch.io">
+        </a>
+      </div>
+  
+      <footer>
+        
+        <div class="legal-m">
+          <a class="legal-item-m" href="Policy/T&C/BS.html">
+            <p>Terms & Conditions</p>
+          </a>
+          <a class="legal-item-m" href="Policy/Privacy/BS.html">
+            <p>Privacy Policy</p>
+          </a>
+        </div>
+          <p style="text-align:center; margin-bottom: 0; margin-top: auto; font-size:x-small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
+        
+      </footer>
 </div>
 
 
@@ -230,7 +249,7 @@
     
     <img width="100%" height="100%" src="img/BS ANDROID.png" alt="BALL SURFERS Logo">
     <a href="BSSPD.html">
-      <button onclick="saveData()" class="button3">
+      <button class="button3">
         DOWNLOAD
       </button>
     </a>
@@ -349,54 +368,6 @@
       <p style="text-align:center; margin-top: 2%; margin-bottom: auto; margin-right: 1%; margin-left: auto; font-size:small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
       </div>
     </footer>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
-    <script>     
-      const firebaseConfig = {
-        apiKey: "AIzaSyCOPFGMkjuO7iu1KjA6YNco0PVM2kk72cg",
-        authDomain: "satak-studios-website.firebaseapp.com",
-        databaseURL: "https://satak-studios-website-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "satak-studios-website",
-        storageBucket: "satak-studios-website.appspot.com",
-        messagingSenderId: "463716022834",
-        appId: "1:463716022834:web:0cd40b89b39230624c5a2b",
-        measurementId: "G-VMSZQ3MNLY"
-      };
-      const app = firebase.initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-
-      var totalDownloads = 8;
-      var tempDowns = 0;
-      function getDownloads() {
-          firebase.database().ref('BSSD').once('value', function(snapshot) {
-              var data = snapshot.val();
-              tempDowns = data.downloads || 0;
-              console.log('dat = ' + tempDowns);
-          });
-      }
-
-      function saveData() {
-          getDownloads();
-          var updatedDownloads = tempDowns + 1;
-          console.log(updatedDownloads);
-          let now = new Date().getDate();
-          let time = new Date().getTime();
-          firebase.database().ref('BSSD').set({
-              downloads: updatedDownloads,
-              date: _date,
-              time: _time
-          }).then(function() {
-              console.log('Downloads updated successfully. New count: ' + updatedDownloads, ', Date: ' + _date + ', and Time: ' + _time);
-          }).catch(function(error) {
-              console.error('Error updating downloads: ', error);
-          });
-          console.log('Downloads updated successfully. New count: ' + updatedDownloads, ', Date: ' + _date + ', and Time: ' + _time);
-      }
-
-  // Call getDownloads to initialize tempDowns
-  getDownloads();
-      document.getElementById('data-web').innerText = getDownloads();
-    </script>
 </div>
 </body>
 </html>

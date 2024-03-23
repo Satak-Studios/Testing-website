@@ -1,11 +1,14 @@
 function setLink() {
   const userAgent = navigator.userAgent;
 
-  let link = "d/BSS/PC/BSS2.exe";
+  //let link = "d/BSS/PC/BSS2.exe";
+  let link = '#';
 if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
-    link = 'd/BSS/PC/BSS2.exe';
+    //link = 'd/BSS/PC/BSS2.exe';
+    let link = "#";
   } else {
-    link = 'd/BSS/PC/BSS2(x86).exe';;
+    //link = 'd/BSS/PC/BSS2(x86).exe';;
+    let link = "#";
   }
 
   const linkElement = document.getElementById('my-link');
@@ -14,7 +17,8 @@ if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
 }
 
 function setLinkMob() {
-  let link = "d/BSS/v2/BSS2.apk";
+  //let link = "d/BSS/v2/BSS2.apk";
+  let link = "#";
   const linkElement = document.getElementById('my-link');
   
   linkElement.href = link;
@@ -26,9 +30,19 @@ function downloadGame(_link,){
 }
 
 function myFunction(imgs) {
-  var trailer = document.getElementById("trailer");
+  var trailer;
+  var expandImg;
+  if (isMobileDevice()) {
+    trailer = document.getElementById("trailer-m");
+  }else{
+    trailer = document.getElementById('trailer')
+  }
   trailer.style.display = "none";
-  var expandImg = document.getElementById("expandedImg");
+  if (isMobileDevice()) {
+    expandImg = document.getElementById("expandedImg-m");
+  }else{
+    expandImg = document.getElementById('expandedImg')
+  }
   expandImg.style.display = "block";
   expandImg.src = imgs.src;
 
@@ -36,8 +50,19 @@ function myFunction(imgs) {
 }
 
 function myVid(vids) {
-  var trailer = document.getElementById("trailer");
-  var expandImg = document.getElementById("expandedImg");
+  var trailer;
+  var expandImg;
+  if (isMobileDevice()) {
+    trailer = document.getElementById("trailer-m");
+  }else{
+    trailer = document.getElementById('trailer')
+  }
+  if (isMobileDevice()) {
+    var expandImg = document.getElementById("expandedImg-m");
+  }else{
+    var expandImg = document.getElementById('expandedImg')
+  }
+  expandImg.src = vids.src;
   expandImg.style.display = "none";
   trailer.style.display = "block";
 }
@@ -62,20 +87,32 @@ function countup(to, element, interval) {
 }
 
 function handleScroll() {
-  var element = document.getElementById('downloads');
-  var a = document.getElementById('data-galaxy');
-  var b = document.getElementById('data-amazon');
-  var c = document.getElementById('data-itch');
-  var d = document.getElementById('data-web');
+  var element;
+  var a, b, c, d;
+
+  if (isMobileDevice()) {
+    a = document.getElementById('data-galaxy-m');
+    b = document.getElementById('data-amazon-m');
+    c = document.getElementById('data-itch-m');
+    d = document.getElementById('data-web-m');
+    element = document.getElementById('downloads-m');
+  } else {
+    a = document.getElementById('data-galaxy');
+    b = document.getElementById('data-amazon');
+    c = document.getElementById('data-itch');
+    d = document.getElementById('data-web');
+    element = document.getElementById('downloads');
+  }
+
   var bounding = element.getBoundingClientRect();
   var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
   if (
-    bounding.top >= -bounding.height &&
-    bounding.bottom <= viewportHeight + bounding.height
+    bounding.top >= -bounding.height / 2 &&
+    bounding.bottom <= viewportHeight + bounding.height / 2
   ) {
     countup(688, a, 8);
-    countup(4, b, 500);
+    countup(5, b, 500);
     countup(76, c, 50);
     countup(downloads, d, 350);
     
@@ -83,10 +120,6 @@ function handleScroll() {
   }
 }
 
-window.addEventListener('scroll', handleScroll);
-
-function popUp(){
-  var modal = document.getElementById('modal')
-
-  modal.style.display = "block";
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }

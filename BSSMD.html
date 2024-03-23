@@ -68,7 +68,7 @@
 
 <script src="js/BS.js"></script>
 
-<body onload="setLinkMob()">
+<body onload="setLinkMob();initializeFirebase();">
 	<div class="container">
 		<h1>Thanks for Downloading!</h1>
 		<p>Your download should begin shortly. If it doesn't, <a id="my-link" href="#">click here</a>.</p>
@@ -87,8 +87,8 @@
 			  </tr>
 			  <tr>
 				<td>Beta 1</td>
-				<td>BALL SURFERS(v1)</td>
-				<td>dont know</td>
+				<td>BALL SURFERS(v0.1)</td>
+				<td>1/10/21</td>
 				<td>
 					<a href="d/BSS/Android/Build1/BALL SURFERS.apk">
 					<h4 class="button-m">Download</h4>
@@ -121,11 +121,53 @@
 				<td>Coming Soon</td>
 				<td>
 					<a href="d/BSS/Android/v2/BSS2.apk">
-					<h4 class="button-m"></h4>
+					<h4 class="button-m">Download</h4>
 					</a>
 				</td>
 			  </tr>
 			</table>  
 		  </div>
+		  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+		  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+		  <script>     
+			function initializeFirebase() {
+				  const firebaseConfig = {
+					  apiKey: "AIzaSyCOPFGMkjuO7iu1KjA6YNco0PVM2kk72cg",
+					  authDomain: "satak-studios-website.firebaseapp.com",
+					  databaseURL: "https://satak-studios-website-default-rtdb.asia-southeast1.firebasedatabase.app",
+					  projectId: "satak-studios-website",
+					  storageBucket: "satak-studios-website.appspot.com",
+					  messagingSenderId: "463716022834",
+					  appId: "1:463716022834:web:0cd40b89b39230624c5a2b",
+					  measurementId: "G-VMSZQ3MNLY"
+				  };
+				  firebase.initializeApp(firebaseConfig);
+				  getDownloads();
+			  }
+			  let tempDowns = 0;
+			  function getDownloads() {
+				  firebase.database().ref('BSSD').once('value', function(snapshot) {
+					  var data = snapshot.val();
+					  tempDowns = data.downloads || 0;
+					  saveData();
+				  })
+			  }
+			  function saveData() {
+				  let currentDate = new Date().toLocaleDateString();
+				  let currentTime = new Date().toLocaleTimeString();
+				  var updatedDownloads = tempDowns + 1;
+				  fetch('https://api.ipify.org?format=json')
+					  .then(response => response.json())
+					  .then(data => {
+						  const userIP = data.ip;
+						  firebase.database().ref('BSSD').set({
+							  downloads: updatedDownloads,
+							  date: currentDate,
+							  time: currentTime,
+							  ipAddress: userIP
+						  });
+					  });
+				  }
+			  </script>
 </body>
 </html>
