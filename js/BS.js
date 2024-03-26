@@ -1,3 +1,6 @@
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 function setLink() {
   const userAgent = navigator.userAgent;
 
@@ -119,7 +122,10 @@ function handleScroll() {
     window.removeEventListener('scroll', handleScroll);
   }
 }
+window.addEventListener('scroll', handleScroll);
 
-function isMobileDevice() {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+function popUp(){
+  var modal = document.getElementById('modal')
+
+  modal.style.display = "block";
 }
