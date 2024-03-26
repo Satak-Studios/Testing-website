@@ -97,34 +97,26 @@
     <script src="js/main.js"></script>
     <script src="js/BS.js"></script>
 <script>
-  function isComputer() {
-      const userAgent = navigator.userAgent;
-
-      // Determine the CPU architecture based on the user agent string and number of logical processors
-      let cpuArchitecture;
-      if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
-        cpuArchitecture = 'x64';
-      } else {
-        cpuArchitecture = 'x86';
-      }
-
-    if (cpuArchitecture === 'x86' || cpuArchitecture === 'x64') {
-         document.getElementById('pc').style.display = "block";
-         document.getElementById('mob').style.display = "none";
-    }else{
-      document.getElementById('mob').style.display = "block";
-      document.getElementById('pc').style.display = "none";
-    }
+window.onload = function() {
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (isMobile) {
+    document.getElementById('mob').style.display = "block";
+    document.getElementById('pc').style.display = "none";
+  } else {
+    document.getElementById('mob').style.display = "none";
+    document.getElementById('pc').style.display = "block";
   }
+}
+
 </script>
 
-<body onload="isComputer()">
+<body>
 
 <div id="mob">
   <div id="main" class="main-m">
     <h2 class="title-m">BALL SURFERS</h2>
     <video id="trailer-m" class="game-trailer-m" src="Trailer/BS.mp4" controls poster="Trailer/BS_Thumbnail.webp" onclick="play()">
-      <button class="icon-play_arrow">sd</button>
+      <button width="50%" height= style="position: absolute; left: 50%; top:50%;" class="icon-play_arrow">sd</button>
     </video>
     <div class="cont">
       <img id="expandedImg-m" style="width:100%">
