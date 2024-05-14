@@ -7,11 +7,12 @@ function setLink() {
   //let link = "d/BSS/PC/BSS2.exe";
   let link = '#';
 if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
-    //link = 'd/BSS/PC/BSS2.exe';
-    let link = "#";
+    link = 'd/BSS/PC/BSS2.exe';
+    //let link = "#";
   } else {
-    //link = 'd/BSS/PC/BSS2(x86).exe';;
-    let link = "#";
+    link = 'd/BSS/PC/BSS2.exe';
+    //link = 'd/BSS/PC/BSS2(x86).exe';
+    //let link = "#";
   }
 
   const linkElement = document.getElementById('my-link');
@@ -20,8 +21,8 @@ if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
 }
 
 function setLinkMob() {
-  //let link = "d/BSS/v2/BSS2.apk";
-  let link = "#";
+  let link = "d/BSS/v2/BSS2.apk";
+  //let link = "#";
   const linkElement = document.getElementById('my-link');
   
   linkElement.href = link;
