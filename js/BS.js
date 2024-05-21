@@ -10,8 +10,8 @@ if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
     link = 'd/BSS/PC/BSS2.exe';
     //let link = "#";
   } else {
-    link = 'd/BSS/PC/BSS2.exe';
-    //link = 'd/BSS/PC/BSS2(x86).exe';
+    //link = 'd/BSS/PC/BSS2.exe';
+    link = 'd/BSS/PC/BSS2(x86).zip';
     //let link = "#";
   }
 
