@@ -21,7 +21,7 @@ if (userAgent.includes('WOW64') || userAgent.includes('Win64')) {
 }
 
 function setLinkMob() {
-  let link = "d/BSS/v2/BSS2.apk";
+  let link = "d/BSS/Android/v2/BSS2.apk";
   //let link = "#";
   const linkElement = document.getElementById('my-link');
   
