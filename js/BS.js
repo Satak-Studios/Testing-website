@@ -72,7 +72,7 @@ function myVid(vids) {
 }
 
 //IMportant
-var downloads = 8;
+var downloads = 64;
 
 function countup(to, element, interval) {
   let from = 0;
@@ -115,10 +115,10 @@ function handleScroll() {
     bounding.top >= -bounding.height / 2 &&
     bounding.bottom <= viewportHeight + bounding.height / 2
   ) {
-    countup(688, a, 8);
+    countup(688, a, 5);
     countup(5, b, 500);
-    countup(76, c, 50);
-    countup(downloads, d, 350);
+    countup(76, c, 30);
+    countup(downloads, d, 40);
     
     window.removeEventListener('scroll', handleScroll);
   }

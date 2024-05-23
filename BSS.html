@@ -99,13 +99,20 @@
 <script>
 window.onload = function() {
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  if (isMobile) {
+  var isDown = true;
+  if (isMobile && !isDown) {
     document.getElementById('mob').style.display = "block";
     document.getElementById('pc').style.display = "none";
-  } else {
+    document.getElementById('sry').style.display = "none";
+  } else if(!isDown && !isMobile){
     document.getElementById('mob').style.display = "none";
     document.getElementById('pc').style.display = "block";
-  }
+    document.getElementById('sry').style.display = "none";
+  }else{
+    document.getElementById('mob').style.display = "none";
+    document.getElementById('pc').style.display = "none";
+    document.getElementById('sry').style.display = "block";
+  } 
 }
 
 </script>
@@ -360,6 +367,15 @@ window.onload = function() {
       <p style="text-align:center; margin-top: 2%; margin-bottom: auto; margin-right: 1%; margin-left: auto; font-size:small; color: aliceblue;"><strong>Copyright © Satak Studios 2024-2026</strong></p>
       </div>
     </footer>
+</div>
+
+<div class="game-info" style="display: block; margin-left: 20%; margin-right: auto;"id="sry">
+  <h1>BALL SURFERS is Moved to main website.</h1>
+  <a href="https://satak-studios.github.io/Satak-Studios-Website/BSS">
+    <button class="button3">
+      DOWNLOAD
+    </button>
+    </a>
 </div>
 </body>
 </html>
